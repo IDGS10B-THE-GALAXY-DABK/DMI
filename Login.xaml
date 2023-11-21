@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursos.Login"
+             Title="Gestión de Cursos (Empresa)">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="LightGray" Padding="10" Margin="10">
+            
+            <Frame BackgroundColor="#2196f3" Padding="24">
+                <Label Text="Iniciar Sesión" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"></Label>
+            </Frame>
+
+            <Label Text="Correo Electronico" TextColor="Black" FontSize="15" Padding="10" ></Label>
+            <Entry Placeholder="Escribir correo" x:Name="txtEmailLog" Keyboard="Email" FontSize="15"></Entry>
+
+            <Label Text="Contraseña" TextColor="Black" FontSize="15" Padding="10"></Label>
+            <Entry Placeholder="Escribir la contraseña" x:Name="txtContraLog" IsPassword="True" FontSize="15"></Entry>
+
+            <Button Text="Ingresar" x:Name="btnIngresar" Clicked="btnIngresar_Clicked" CornerRadius="10" BackgroundColor="ForestGreen" Margin="2"></Button>
+            <Button Text="Registrarse" x:Name="btnRegistro" Clicked="btnRegistro_Clicked" CornerRadius="10" BackgroundColor="YellowGreen" Margin="2"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
