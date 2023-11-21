@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursos.MainPage"
+             Title="REGRESAR">
+
+    <StackLayout BackgroundColor="LightGray" Padding="10" Margin="10">
+        <Frame BackgroundColor="#2196F3" Padding="5" >
+            <Label Text="EMPLEADOS" HorizontalTextAlignment="Center" TextColor="White" FontSize="17"/>
+        </Frame>
+
+        <Label Text="Formulario" HorizontalTextAlignment="Center"  TextColor="Black"></Label>
+        <Entry x:Name="txtIdEmp" IsVisible="False" IsEnabled="False" TextColor="Black" FontSize="15" Margin="-10"/>
+
+        <Entry Placeholder="Nombre" x:Name="txtNombre"  FontSize="15" Margin="-10" />
+
+        <Entry Placeholder="ApellidoPaterno" x:Name="txtApellidoP" FontSize="15" Margin="-10"/>
+
+        <Entry Placeholder="ApellidoMaterno" x:Name="txtApellidoM" FontSize="15" Margin="-10"/>
+
+        <Entry Placeholder="Direccion" x:Name="txtDireccion" FontSize="15" Margin="-10"/>
+
+        <Entry Placeholder="Edad" x:Name="txtEdad" Keyboard="Numeric" FontSize="15" Margin="-10"/>
+
+        <Entry Placeholder="Telefono" x:Name="txtTelefono" Keyboard="Numeric" FontSize="15" Margin="-10"/>
+
+        <Entry Placeholder="CURP" x:Name="txtCurp" FontSize="15" Margin="-10"/>
+
+        <Picker x:Name="pickerTipoEmp" Title="Tipo de Empleado" FontSize="15" Margin="-10">
+            <Picker.Items>
+                <x:String>Planta</x:String>
+                <x:String>Temporal</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Guardar" x:Name="btnGuardar" Clicked="Button_Clicked" Margin="1" CornerRadius="10" BackgroundColor="ForestGreen" MinimumHeightRequest="33"/>
+        <Button Text="Actualizar" x:Name="btnActualizar" Clicked="btnActualizar_Clicked" IsVisible="False" Padding="-10" CornerRadius="10" BackgroundColor="Orange" MinimumHeightRequest="33"/>
+        <Button Text="Eliminar" x:Name="btnEliminar" Clicked="btnEliminar_Clicked" IsVisible="False" BackgroundColor="Red" CornerRadius="10" MinimumHeightRequest="33"/>
+
+
+        <ListView x:Name="lsEmpleados" ItemSelected="lstEmpleados_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding IdEmp}" Grid.Row = "0" Grid.Column = "0" HorizontalOptions="Center" TextColor="Black"/>
+                            <Label Text="{Binding FullName}" Grid.Row = "0" Grid.Column = "1" TextColor="Black" />
+                            <Label Text="{Binding Direccion}" Grid.Row = "0" Grid.Column = "2" HorizontalOptions="Center" TextColor="Black"/>
+                            <Label Text="{Binding Edad}" Grid.Row = "0" Grid.Column = "3" HorizontalOptions="Center" TextColor="Black"/>
+                            <Label Text="{Binding Telefono}" Grid.Row = "0" Grid.Column = "4" HorizontalOptions="Center" TextColor="Black"/>
+                            <Label Text="{Binding Curp}" Grid.Row = "0" Grid.Column = "5" HorizontalOptions="Center" TextColor="Black" />
+                            <Label Text="{Binding TipoEmpleado}" Grid.Row = "0" Grid.Column = "6"  TextColor="Black"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

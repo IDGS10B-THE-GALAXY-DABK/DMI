@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursos.MainPage2"
+             Title="REGRESAR">
+    
+    <StackLayout BackgroundColor="LightGray" Padding="10" Margin="10">
+
+        <Frame BackgroundColor="#2196F3" Padding="24">
+            <Label Text="Cursos" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+        </Frame>
+
+        <Entry x:Name="txtIdCurso" IsVisible="False" FontSize="15" IsEnabled="False" TextColor="Black" Margin="-5"/>
+
+        <Label Text="Curso" FontSize="15" TextColor="Black" Margin="-5"></Label>
+        <Entry Placeholder="Nombre del Curso" x:Name="txtNombreCurso" FontSize="15" TextColor="Black" Margin="-5"/>
+
+        <Label Text="Escoge:" FontSize="15" TextColor="Black" Margin="-5"></Label>
+        <Picker x:Name="pickerTipoCurso" Title="Tipo de Curso" FontSize="15" TextColor="Black" Margin="-5">
+            <Picker.Items>
+                <x:String>Interno</x:String>
+                <x:String>Externo</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Insertar:" FontSize="15" TextColor="Black" Margin="-5"></Label>
+        <Entry Placeholder="Descripcion" x:Name="txtDescripCurs" FontSize="15" TextColor="Black" Margin="-5"/>
+
+        <Label Text="Duración del Curso: (Hrs o Min)" FontSize="15" TextColor="Black" Margin="-5"></Label>
+        <Entry Placeholder="Tiempo" x:Name="txtTiempoCurs" FontSize="15" TextColor="Black" Margin="-5"/>
+
+        <Button Text="Guardar" x:Name="btnGuardarCurso" Clicked="btnGuardarCurso_Clicked" MinimumHeightRequest="33" CornerRadius="10" BackgroundColor="ForestGreen"/>
+        <Button Text="Actualizar" x:Name="btnActualizarCurso" Clicked="btnActualizarCurso_Clicked" IsVisible="False" MinimumHeightRequest="33" CornerRadius="10" BackgroundColor="Orange"/>
+        <Button Text="Eliminar" x:Name="btnEliminarCurso" Clicked="btnEliminarCurso_Clicked" IsVisible="False" MinimumHeightRequest="33" CornerRadius="10" BackgroundColor="Red"/>
+
+
+        <StackLayout x:Name="headerStack" IsVisible="false">
+            <Label Text="Cursos" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        
+        <ListView x:Name="lsCursos" ItemSelected="lsCursos_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding IdCurso}" Grid.Row = "0" Grid.Column = "0" HorizontalOptions="Center" TextColor="Black"/>
+                            <Label Text="{Binding NombreCurso}" Grid.Row = "0" Grid.Column = "1" TextColor="Black"/>
+                            <Label Text="{Binding TipoCurso}" Grid.Row = "0" Grid.Column = "2" TextColor="Black"/>
+                            <Label Text="{Binding Descripcion}" Grid.Row = "0" Grid.Column = "3" TextColor="Black"/>
+                            <Label Text="{Binding Tiempo}" Grid.Row = "0" Grid.Column = "4" HorizontalOptions="Center" TextColor="Black"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

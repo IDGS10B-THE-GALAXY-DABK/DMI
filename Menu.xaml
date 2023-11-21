@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursos.Menu"
+             Title="Salir">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightGray" Padding="10" Margin="10">
+            <Frame BackgroundColor="#2196f3" Padding="24" Margin="10">
+                <Label Text="Menu" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"></Label>
+            </Frame>
+            
+            <Button Text="Empleados" x:Name="btnEmpleados" Clicked="btnEmpleados_Clicked" CornerRadius="10" BackgroundColor="ForestGreen" Margin="10"  ></Button>
+            <Button Text="Cursos" x:Name="btnCursos" Clicked="btnCursos_Clicked" CornerRadius="10" BackgroundColor="YellowGreen" Margin="10"></Button>
+            <Button Text="Seguimiento de Cursos" x:Name="SegCursps" Clicked="SegCursps_Clicked" CornerRadius="10" BackgroundColor="Gold" Margin="10"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

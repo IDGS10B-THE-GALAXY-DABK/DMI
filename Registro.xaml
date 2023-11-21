@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursos.Registro"
+             Title="REGRESAR">
+    
+    <ContentPage.Content>
+        
+        <StackLayout BackgroundColor="LightGray" Padding="10" Margin="10">
+            
+            <Frame BackgroundColor="#2196f3" Padding="24">
+                <Label Text="Registro" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+
+            <Label Text="Correo" TextColor="Black" Padding="10" FontSize="15" Margin="-5"></Label>
+            <Entry Placeholder="Escribir correo" x:Name="txtEmailReg" Keyboard="Email" FontSize="15" ></Entry>
+
+            <Label Text="Contraseña" TextColor="Black" Padding="10" FontSize="15"  Margin="-5"></Label>
+            <Entry Placeholder="Escribir la contraseña" x:Name="txtContraReg" IsPassword="True" FontSize="15"></Entry>
+
+            <Label Text="Nombre de Usuario" TextColor="Black" Padding="10" FontSize="15"  Margin="-5"></Label>
+            <Entry Placeholder="Escribe tu nombre" x:Name="txtNombreReg" FontSize="15"></Entry>
+
+            <Label Text="Edad del Usuario" TextColor="Black" Padding="10" FontSize="15"  Margin="-5"></Label>
+            <Entry Placeholder="Escribe tu edad" x:Name="txtEdadReg" Keyboard="Numeric" FontSize="15"></Entry>
+            
+            <Button Text="CONFIRMAR" Clicked="Button_Clicked" BackgroundColor="YellowGreen" CornerRadius="10" Margin="2"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
